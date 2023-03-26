@@ -31,7 +31,7 @@ public class PlayfabManager : MonoBehaviour
             CreateAccount = true,
             InfoRequestParameters = new GetPlayerCombinedInfoRequestParams
             {
-                GetPlayerProfile = true
+                GetPlayerProfile = true,
             }
         };
         PlayFabClientAPI.LoginWithCustomID(request,OnSuccess,OnError);
@@ -71,18 +71,6 @@ public class PlayfabManager : MonoBehaviour
     private void OnLeaderBoardChanged(UpdatePlayerStatisticsResult result)
     {
         Debug.Log("Succesfully sended");
-    }
-
-    [ContextMenu("Test")]
-    public void SendRandomScore()
-    {
-        SendScoreToLeaderBoard(Random.Range(1,100));
-    }
-
-    [ContextMenu("Test LeaderBoard")]
-    public void GetLeader()
-    {
-        GetLeaderBoard();
     }
 
     public void GetLeaderBoard()
